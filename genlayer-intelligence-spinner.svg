@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="160"
+     height="160"
+     viewBox="0 0 160 160">
+
+  <title>GenLayer Intelligence Spinner</title>
+  <desc>
+    Animated triangular loading spinner inspired by GenLayer's geometric identity.
+  </desc>
+
+  <style>
+    .orbit {
+      transform-origin: 80px 80px;
+      animation: orbit 1.6s cubic-bezier(.65,0,.35,1) infinite;
+    }
+
+    .core {
+      transform-origin: 80px 80px;
+      animation: core 1.6s ease-in-out infinite;
+    }
+
+    .pulse {
+      animation: pulse 1.6s ease-in-out infinite;
+    }
+
+    @keyframes orbit {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes core {
+      0%, 100% {
+        transform: scale(.88);
+        opacity: .72;
+      }
+
+      50% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: .35;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .orbit,
+      .core,
+      .pulse {
+        animation: none;
+      }
+    }
+  </style>
+
+  <!-- Rotating triangular structure -->
+  <g class="orbit">
+
+    <!-- Orange active intelligence segment -->
+    <path
+      d="M80 18
+         L112 78
+         L101 78
+         L80 39
+         L59 78
+         L48 78
+         Z"
+      fill="#FF7A00"
+      class="pulse"
+    />
+
+    <!-- Right structural segment -->
+    <path
+      d="M130 91
+         L96 91
+         L80 120
+         L74 109
+         L91 79
+         L136 79
+         Z"
+      fill="#171C2D"
+      opacity=".85"
+    />
+
+    <!-- Left structural segment -->
+    <path
+      d="M30 91
+         L64 91
+         L80 120
+         L86 109
+         L69 79
+         L24 79
+         Z"
+      fill="#171C2D"
+      opacity=".45"
+    />
+
+  </g>
+
+  <!-- Central intelligence core -->
+  <g class="core">
+
+    <circle
+      cx="80"
+      cy="80"
+      r="14"
+      fill="#FF7A00"
+    />
+
+    <circle
+      cx="80"
+      cy="80"
+      r="4"
+      fill="#FFFFFF"
+    />
+
+  </g>
+
+</svg>
